@@ -16,9 +16,9 @@ class Spaceship extends Floater
       yCorners[1] = 0;
       xCorners[2] = -8;
       yCorners[2] = 8;
-      myColor = 0;
-      myCenterX = 0;
-      myCenterY = 0;
+      myColor = 255;
+      myCenterX = 250;
+      myCenterY = 250;
       myDirectionX = 0;
       myDirectionY = 0;
       myPointDirection = 90;
