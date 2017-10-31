@@ -1,7 +1,7 @@
 class Spaceship extends Floater  
 {   
   int myX, myY;
-  double myDirX, myDirY, myPtDir;
+  double myDirectionX, myDirectionY, myPointDir;
   //int [] xCorners = {-8, 16, -8};
   //int [] yCorners = {-8, 0, 8};
 
@@ -23,14 +23,14 @@ class Spaceship extends Floater
       myDirectionY = 0;
       myPointDirection = 90;
     }
-     public void setX(int x){myX = x;}
-     public int getX(){return myX;}
+     public void setX(int x){myCenterX = x;}
+     public double getX(){return myCenterX;}
      public void setY(int y){myY = y;}
      public int getY(){return myY;}
-      public void setDirectionX(double x){myDirX = x;} 
-   public double getDirectionX(){return myDirX;}  
-   public void setDirectionY(double y){myDirY = y;}   
-   public double getDirectionY(){return myDirY;}   
-   public void setPointDirection(int degrees){myPtDir = degrees;}   
-   public double getPointDirection(){return myPtDir; }
+      public void setDirectionX(double x){myDirectionX = x;} 
+   public double getDirectionX(){return myDirectionX;}  
+   public void setDirectionY(double y){myDirectionY = y;}   
+   public double getDirectionY(){return myDirectionY;}   
+   public void setPointDirection(int degrees){myPointDirection = degrees;}   
+   public double getPointDirection(){return myPointDirection; }
 }
