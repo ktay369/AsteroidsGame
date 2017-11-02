@@ -1,5 +1,6 @@
 Stars[] sky = new Stars[200];
 Spaceship spaceship;
+Asteroid ast = new Asteroid();
 public void setup() 
 {
   size(500, 500);
@@ -18,6 +19,8 @@ public void draw()
   }
   spaceship.show();
   spaceship.move();
+  ast.show();
+  ast.move();
 }
 public void keyPressed(){
   if(key=='w')
