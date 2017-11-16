@@ -1,17 +1,17 @@
 class Asteroid extends Floater
 {
-  private int rSpeed;
+  protected int rSpeed;
   public Asteroid(){
     corners = 4;
       xCorners = new int[corners];
       yCorners = new int[corners];
       xCorners[0] = 0;
-      yCorners[0] = -4;
-      xCorners[1] = 4;
+      yCorners[0] = -8;
+      xCorners[1] = 8;
       yCorners[1] = 0;
       xCorners[2] = 0;
-      yCorners[2] = 4;
-      xCorners[3] = -4;
+      yCorners[2] = 8;
+      xCorners[3] = -8;
       yCorners[3] = 0;
       myColor = 255;
       myCenterX = ((int)(Math.random()*480)+11);
