@@ -1,6 +1,6 @@
 Stars[] sky = new Stars[200];
 Spaceship spaceship;
-Asteroid[] ast = new Asteroid[5];
+ArrayList<Asteroid> ast = new ArrayList<Asteroid>();
 public void setup() 
 {
   size(500, 500);
@@ -9,9 +9,10 @@ public void setup()
    sky[i] = new Stars(); 
   }
   spaceship = new Spaceship();
-  for (int i = 0; i<ast.length; i++)
+  for (int i = 0; i<5; i++)
   {
-   ast[i] = new Asteroid(); 
+   ast.add(new Asteroid()); 
+   
   }
 }
 public void draw() 
@@ -23,12 +24,18 @@ public void draw()
   }
   spaceship.show();
   spaceship.move();
-  for (int i = 0; i<ast.length; i++)
+  for (int i = 0; i<5; i++)
   {
-  ast[i].show();
-  ast[i].move();
+    if(dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())>10){
+  ast.get(i).show();
+  ast.get(i).move();
+    }
+    else{
+      ast.set(i, new Small());
+    }
+  
+  
   }
- 
 }
 public void keyPressed(){
   if(key=='w')
