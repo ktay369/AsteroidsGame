@@ -9,7 +9,7 @@ public void setup()
    sky[i] = new Stars(); 
   }
   spaceship = new Spaceship();
-  for (int i = 0; i<5; i++)
+  for (int i = 0; i<ast.size(); i++)
   {
    ast.add(new Asteroid()); 
    
@@ -24,7 +24,7 @@ public void draw()
   }
   spaceship.show();
   spaceship.move();
-  for (int i = 0; i<5; i++)
+  for (int i = 0; i<ast.size(); i++)
   {
     if(dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())>10){
   ast.get(i).show();
