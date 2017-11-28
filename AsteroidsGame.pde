@@ -9,7 +9,7 @@ public void setup()
    sky[i] = new Stars(); 
   }
   spaceship = new Spaceship();
-  for (int i = 0; i<ast.size(); i++)
+  for (int i = 0; i<5; i++)
   {
    ast.add(new Asteroid()); 
    
@@ -30,7 +30,7 @@ public void draw()
   ast.get(i).show();
   ast.get(i).move();
     }
-    else{
+    else if(ast.get(i).getClass().equals(Small){
       ast.set(i, new Small());
     }
   
