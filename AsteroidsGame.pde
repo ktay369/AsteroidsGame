@@ -30,8 +30,10 @@ public void draw()
   ast.get(i).show();
   ast.get(i).move();
     }
-    else if(ast.get(i).getClass().equals(Small){
+    else
+      {
       ast.set(i, new Small());
+      ast.add(i+1, new Small());
     }
   
   
@@ -54,4 +56,5 @@ public void keyPressed(){
    spaceship.setY((int)(Math.random()*480)+11);
    spaceship.setPointDirection((int)(Math.random()*360)+1);
  }
+ if(key=='p')
 }

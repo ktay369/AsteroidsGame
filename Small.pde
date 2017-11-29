@@ -22,4 +22,9 @@ class Small extends Asteroid
       if(Math.random()<.5){rSpeed = 5;}
       else{rSpeed = -5;} 
   }
+  public Small(int x)
+  {
+    myCenterX = x;
+    //myCenterY = y;
+  }
 }
