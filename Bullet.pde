@@ -11,12 +11,12 @@ class Bullet extends Floater
       xCorners[2] = -1;
       yCorners[2] = 1;
       myColor = 255;
-      myCenterX = ((int)(Math.random()*480)+11);
-      myCenterY = ((int)(Math.random()*480)+11);
+      myCenterX = spaceship.getX();
+      myCenterY = spaceship.getY();
       
-      myDirectionX = (int)(Math.random()*7)-3;
-      myDirectionY = (int)(Math.random()*7)-3;
-      myPointDirection = 90;
+      myDirectionX = spaceship.getDirectionX();
+      myDirectionY = spaceship.getDirectionY();
+      myPointDirection = spaceship.getPointDirection();
       
   }
   public void setX(int x){myCenterX = x;}
