@@ -1,6 +1,7 @@
 Stars[] sky = new Stars[200];
 Spaceship spaceship;
 ArrayList<Asteroid> ast = new ArrayList<Asteroid>();
+ArrayList<Bullet> shot = new ArrayList<Bullet>();
 public void setup() 
 {
   size(500, 500);
@@ -12,8 +13,8 @@ public void setup()
   for (int i = 0; i<5; i++)
   {
    ast.add(new Asteroid()); 
-   
   }
+  
 }
 public void draw() 
 {
@@ -24,6 +25,7 @@ public void draw()
   }
   spaceship.show();
   spaceship.move();
+  
   for (int i = 0; i<ast.size(); i++)
   {
     if(dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())>10){
@@ -57,4 +59,7 @@ public void keyPressed(){
    spaceship.setPointDirection((int)(Math.random()*360)+1);
  }
  if(key=='p')
+ {
+  shot.add(new Bullet()); 
+ }
 }
