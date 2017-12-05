@@ -37,11 +37,12 @@ class Bullet extends Floater
    public void setPointDirection(int degrees){myPointDirection = degrees;}   
    public double getPointDirection(){return myPointDirection; }
    public void show(){
-    fill(myColor);   
+    fill(255);   
     stroke(myColor);    
     
     //translate the (x,y) center of the ship to the correct position
-    translate((float)myCenterX, (float)myCenterY); 
-    ellipse(getCenterX
+    
+    
+    ellipse((float)myCenterX, (float)myCenterY, 15, 15);
    }
 }
