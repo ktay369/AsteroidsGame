@@ -15,6 +15,7 @@ public void setup()
   for (int i = 0; i<5; i++)
   {
    ast.add(new Asteroid()); 
+     
   }
   
 }
@@ -28,18 +29,43 @@ public void draw()
   spaceship.show();
   spaceship.move();
 
-  ast.get(i).show();
-  ast.get(i).move();
+
   for (int i = 0; i<ast.size(); i++)
   {
-    if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(i).getX(),shot.get(i).getY())>10){
-      ast.set(i, new Small());
-      ast.add(i+1, new Small());
-      shot.remove(i);
-      break;
+    if(shot.size()>0){
+      if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(i).getX(),shot.get(i).getY())>10){    
+    break;
+     }
+      else{
+       //ast.set(i, new Small());
+      //ast.add(i+1, new Small());
+      ast.remove(i);
+      
+    break;
+      }
     }
-    
   }
+  for (int i = 0; i<shot.size(); i++)
+  {
+    if(shot.size()>0){
+      if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(i).getX(),shot.get(i).getY())>10){    
+    break;
+     }
+      else{
+       //ast.set(i, new Small());
+      //ast.add(i+1, new Small());
+      shot.remove(i);
+    break;
+      }
+    }
+  }
+    for (int i = 0; i<ast.size(); i++)
+  {
+    ast.get(i).show();
+    ast.get(i).move();
+  }
+    
+  
   for (int i = 0; i<shot.size(); i++)
   {
     
