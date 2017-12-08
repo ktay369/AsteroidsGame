@@ -3,6 +3,7 @@ Spaceship spaceship;
 ArrayList<Asteroid> ast = new ArrayList<Asteroid>();
 
 ArrayList<Bullet> shot = new ArrayList<Bullet>();
+int hitCount = 0;
 public void setup() 
 {
   size(500, 500);
@@ -22,6 +23,7 @@ public void setup()
 public void draw() 
 {
   background(0);
+  //ship
   for (int i = 0; i<sky.length; i++)
   {
    sky[i].show(); 
@@ -29,49 +31,49 @@ public void draw()
   spaceship.show();
   spaceship.move();
 
-
+  
+  //shoot rel ast
   for (int i = 0; i<ast.size(); i++)
   {
+    for(int j = 0; j<shot.size(); j++)
     if(shot.size()>0){
-      if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(i).getX(),shot.get(i).getY())>10){    
-    break;
+      if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(j).getX(),shot.get(j).getY())<10){ 
+        ast.remove(i);
+        shot.remove(j);
+        break;
+      }
+    
      }
-      else{
-       //ast.set(i, new Small());
-      //ast.add(i+1, new Small());
-      ast.remove(i);
       
-    break;
-      }
     }
-  }
-  for (int i = 0; i<shot.size(); i++)
-  {
-    if(shot.size()>0){
-      if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(i).getX(),shot.get(i).getY())>10){    
-    break;
-     }
-      else{
-       //ast.set(i, new Small());
-      //ast.add(i+1, new Small());
-      shot.remove(i);
-    break;
-      }
-    }
-  }
+  
+  //ast show
     for (int i = 0; i<ast.size(); i++)
   {
     ast.get(i).show();
     ast.get(i).move();
   }
     
-  
+  //shot show
   for (int i = 0; i<shot.size(); i++)
   {
     
     shot.get(i).move();
     shot.get(i).show();
   }
+ //ship hit
+for(int i = 0; i<ast.size(); i++){
+if(dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())<15){    
+  //spaceship = null;
+  fill(0);
+  rect(0, 0, 500, 0, 500, 500, 0, 500);
+  hitCount++;
+  break;
+}
+}
+//etc text
+fill(255);
+text("Hit Count: "+hitCount, 100, 100);
   }
 
 public void keyPressed(){
