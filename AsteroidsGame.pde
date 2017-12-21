@@ -1,7 +1,7 @@
 Stars[] sky = new Stars[200];
 Spaceship spaceship;
 ArrayList<Asteroid> ast = new ArrayList<Asteroid>();
-
+int down = 0;
 ArrayList<Bullet> shot = new ArrayList<Bullet>();
 int hitCount = 0;
 public void setup() 
@@ -40,6 +40,7 @@ public void draw()
       if(dist(ast.get(i).getX(),ast.get(i).getY(),shot.get(j).getX(),shot.get(j).getY())<10){ 
         ast.remove(i);
         shot.remove(j);
+        //ast.add(new Small(ast.get(i).getX(), ast.get(i).getX()));
         break;
       }
     
@@ -63,11 +64,12 @@ public void draw()
   }
  //ship hit
 for(int i = 0; i<ast.size(); i++){
-if(dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())<15){    
+if(down==0&&dist(ast.get(i).getX(),ast.get(i).getY(),spaceship.getX(),spaceship.getY())<15){    
   //spaceship = null;
   fill(0);
   rect(0, 0, 500, 0, 500, 500, 0, 500);
   hitCount++;
+  down = 50;
   break;
 }
 }
